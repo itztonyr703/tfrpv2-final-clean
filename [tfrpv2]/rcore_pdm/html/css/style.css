@@ -1,0 +1,220 @@
+body{
+	overflow: hidden;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.paymentType{
+    display: initial;
+    margin: auto;
+    height: 150px;
+    padding: 3px;
+}
+
+.hide-image{
+    transition: filter 3.5s ease-in-out;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.cash-container{
+    background: #ECF0F1;
+    border-radius: 32px;
+    color: #2C3E50;
+    font-size: 24px;
+    padding: 20px;
+    z-index: 100;
+    transition-duration: 1s;
+}
+
+.cash-container:hover{
+    transition-duration: 1s;
+    box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgb(0 0 0 / 0.62);
+}
+
+img{
+    border-radius: 29px;
+    height: 100%;
+    width: 202px;
+    display: inline-block;
+    float: right;
+}
+
+.progress_bar{
+    text-align: left;
+    padding: 3px 7px;
+    font-size: 1.4vw;
+    background: linear-gradient(to right, #6f16fe, #bb64f5);
+    transition-duration: 1s;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 95% 0);
+    margin: 5px 0px;
+    display: inline-table;
+    max-width: 100%;
+}
+
+.indexCount{
+    position: relative;
+    font-size: 43px;
+    bottom: 54px;
+    text-align: center;
+    margin-top: -6px;
+    margin-bottom: -5px;
+    background: -webkit-linear-gradient(#7b16fe, #fbae12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.car_compoments{
+    position: absolute;
+    left: 2%;
+    top: 4%;
+    max-width: 410px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 16px 30px;
+}
+
+#loader {
+    position: relative;
+    left: 49.3%;
+    width: 40px;
+    height: 40px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: rgb(85, 0, 255) rgb(243, 243, 243) rgb(243, 243, 243);
+    border-image: initial;
+    border-radius: 50%;
+    border-top: 9px solid rgb(85, 0, 255);
+    animation: 2s linear 0s infinite normal none running spin;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingPanel{
+    position: absolute;
+    bottom: 166px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    text-shadow: 2px 2px #000000;
+}
+
+.car_compoments h1{
+	font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 1.7vw;
+    margin-bottom: 1px;
+}
+
+.blackbar{
+    position: absolute;
+    bottom: 0;
+    background: #00000073;
+    height: 166px;
+    width: 100%;
+    z-index: 100;
+}
+
+.box-car.active{
+    outline: none;
+    border-color: #3f1196;
+    box-shadow: 0 0 10px #6a3dbf;
+}
+
+.box-car{
+    border-style: solid;
+    border-radius: 35px;
+    border-width: 5px;
+    border-color: #ffffff;
+    max-height: 113px;
+    max-width: 202px;
+    margin: 0px 3px;
+    width: 100%;
+    height: 115px;
+    box-sizing: unset !important;
+}
+
+.carinfo{
+    position: absolute;
+    right: 9%;
+    bottom: 110%;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+.carinfo.car{
+    font-size: 63px;
+    position: relative;
+    background: -webkit-linear-gradient(#6316fe, #9869f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    padding: 0;
+    margin-top: -6px;
+    margin-bottom: -5px;
+}
+
+.carinfo.type{
+    font-size: 40px;
+    position: relative;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.carinfo.price{
+    font-size: 40px;
+    position: relative;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+    color: #67e65e;
+}
+
+#cars{
+    margin: auto;
+    max-width: 55%;
+    position: absolute;
+    width: 100%;
+    bottom: 2%;
+    right: 0%;
+    display: flex;
+    z-index: 110;
+    transition-duration: 0.3s;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .15s ease;
+}
+.slide-fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+#container{
+
+}
+

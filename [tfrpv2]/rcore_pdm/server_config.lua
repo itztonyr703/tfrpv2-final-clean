@@ -1,0 +1,1 @@
+Config.ScreenshotWebhook = "https://discord.com/api/webhooks/1016389235999252631/OxYoDzTDcBIw89Ek70STguneyxRSg53DxFyhDEDFrp4yi22-423kK91qq62MtbET4miW"

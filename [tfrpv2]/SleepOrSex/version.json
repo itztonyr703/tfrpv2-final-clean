@@ -1,0 +1,9 @@
+{
+  "version": "2.4.6",
+  "changelog": "https://github.com/Steviol/SleepOrSexVersion/releases/latest",
+
+  "fivem": {
+      "version": "2.4.6",
+      "changelog": "Fix testpack for activatin child birth function"
+  }
+}

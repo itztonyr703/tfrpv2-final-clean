@@ -1,0 +1,25 @@
+How to install on singleplayer:
+
+1. Download this addon and install it: https://www.gta5-mods.com/misc/custom-animations-add-on-customanims
+2. Next drag and drop the .ycd file to the clip_mp_.rpf file.
+3. Open the MenyooStuff folder located in your game root folder and paste the next line in the FavouriteAnims.xml file without changing any other values:
+
+<Anim dict="cowgirl@sinkra" name="cowgirl_clip" />
+
+4. Open the game and choose the animation in Menyoo's favourite animations section.
+
+How to install on fivem
+
+   ["Cuddle1"] = {"cuddlepartner1@pawuk", "cuddlepartner1_clip", "Cuddle1", AnimationOptions =
+   {
+	   EmoteLoop = true,
+       EmoteMoving = false,
+   }},
+   ["Cuddle2"] = {"cuddlepartner2@pawuk", "cuddlepartner2_clip", "Cuddle2", AnimationOptions =
+   {
+	   EmoteLoop = true,
+       EmoteMoving = false,
+   }},
+
+
+Sinkra

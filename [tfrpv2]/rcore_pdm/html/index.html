@@ -1,0 +1,429 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+    <script src="./scripts/vue.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <script src="./scripts/bootstrap-notify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/notif.css" type="text/css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/menu.css">
+</head>
+<body style="background: transparent !important;">
+<div id="container">
+
+    <div class="modal fade" id="textboard" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false"
+         data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="textboard_header">Result</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onkeydown="return event.key != 'Enter';">
+                        <div class="form-group">
+                            <textarea class="textarea" style="min-height: 28vw;min-width: 100%;"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="Close()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="visible_menu">
+        <div class="container" v-bind:class="[position, float]" v-if="visible_menu">
+            <div class="title"><p>{{App.titleMenu}}</p></div>
+            <div v-for="item, index in menu" class="menu" v-bind:class="{ 'active': item.active}">
+                <p><span v-html="item.label"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="chooseToGetRefund" tabindex="-1" style="color: #2C3E50;" data-keyboard="false"
+         data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Payment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <h3>Where do you want the money?</h3>
+                    <div class="row m-5">
+                        <div class="col-6 text-center paymentType">
+                            <a @click="requestRefund('cash')">
+                                <div class="cash-container h-100 test">
+                                    <h5>Cash</h5>
+                                    <svg width="48" height="63" viewBox="0 0 48 80" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24 3.3335V76.6668" stroke="#3498DB" stroke-width="6.66667"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M40.6667 16.6665H15.6667C12.5725 16.6665 9.60501 17.8957 7.41709 20.0836C5.22916 22.2715 4 25.239 4 28.3332C4 31.4274 5.22916 34.3948 7.41709 36.5827C9.60501 38.7707 12.5725 39.9998 15.6667 39.9998H32.3333C35.4275 39.9998 38.395 41.229 40.5829 43.4169C42.7708 45.6048 44 48.5723 44 51.6665C44 54.7607 42.7708 57.7282 40.5829 59.9161C38.395 62.104 35.4275 63.3332 32.3333 63.3332H4"
+                                              stroke="#3498DB" stroke-width="6.66667" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center paymentType">
+                            <a @click="requestRefund('bank')">
+                                <div class="cash-container h-100 test">
+                                    <h5>Bank</h5>
+                                    <svg width="80" height="60" viewBox="0 0 80 60" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M70.0002 3.3335H10.0002C6.31826 3.3335 3.3335 6.31826 3.3335 10.0002V50.0002C3.3335 53.6821 6.31826 56.6668 10.0002 56.6668H70.0002C73.6821 56.6668 76.6668 53.6821 76.6668 50.0002V10.0002C76.6668 6.31826 73.6821 3.3335 70.0002 3.3335Z"
+                                              stroke="#3498DB" stroke-width="6.66667" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M3.3335 23.3335H76.6668" stroke="#3498DB" stroke-width="6.66667"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="selling_car_info" tabindex="-1" aria-labelledby="selling_car_info"
+         aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info" style="color:white;">
+                    <h5 class="modal-title">You're about sell your vehicle to PDM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert">
+                        Do you wish to sell this vehicle back to PDM?
+                        You will only receive {{sellBackPercentage}}% of the original price you bought it for!
+                        The money you will earn by selling this vehicle
+                        $<strong>{{numberWithCommas(sellBackPrice)}}</strong>
+                        <div class="mt-3">
+                            <button @click="sellTheVehicle()" class="btn btn-success" type="button">Yes</button>
+                            <button @click="Close()" class="btn btn-secondary" type="button">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="paymentType" tabindex="-1" style="color: #2C3E50;" data-keyboard="false"
+         data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Payment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <h3>Choose your payment type</h3>
+                    <div class="row m-5">
+                        <div class="col-6 text-center paymentType" v-if="activeIndex.hasPrice != false">
+                            <a @click="selectPayment('cash')">
+                                <div class="cash-container h-100 test">
+                                    <h5>Cash</h5>
+                                    <svg width="48" height="63" viewBox="0 0 48 80" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24 3.3335V76.6668" stroke="#3498DB" stroke-width="6.66667"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M40.6667 16.6665H15.6667C12.5725 16.6665 9.60501 17.8957 7.41709 20.0836C5.22916 22.2715 4 25.239 4 28.3332C4 31.4274 5.22916 34.3948 7.41709 36.5827C9.60501 38.7707 12.5725 39.9998 15.6667 39.9998H32.3333C35.4275 39.9998 38.395 41.229 40.5829 43.4169C42.7708 45.6048 44 48.5723 44 51.6665C44 54.7607 42.7708 57.7282 40.5829 59.9161C38.395 62.104 35.4275 63.3332 32.3333 63.3332H4"
+                                              stroke="#3498DB" stroke-width="6.66667" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center paymentType" v-if="activeIndex.hasPrice != false">
+                            <a @click="selectPayment('bank')">
+                                <div class="cash-container h-100 test">
+                                    <h5>Bank</h5>
+                                    <svg width="80" height="60" viewBox="0 0 80 60" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M70.0002 3.3335H10.0002C6.31826 3.3335 3.3335 6.31826 3.3335 10.0002V50.0002C3.3335 53.6821 6.31826 56.6668 10.0002 56.6668H70.0002C73.6821 56.6668 76.6668 53.6821 76.6668 50.0002V10.0002C76.6668 6.31826 73.6821 3.3335 70.0002 3.3335Z"
+                                              stroke="#3498DB" stroke-width="6.66667" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M3.3335 23.3335H76.6668" stroke="#3498DB" stroke-width="6.66667"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-6 text-center paymentType" v-if="activeIndex.vip_price != false">
+                            <a @click="selectPayment('vip')">
+                                <div class="cash-container h-100 test">
+                                    <h5>Special</h5>
+                                    <svg width="80" height="70" xmlns="http://www.w3.org/2000/svg"
+                                         class="icon icon-tabler icon-tabler-currency-bitcoin" viewBox="0 0 24 24"
+                                         stroke-width="2" stroke="#3498DB" fill="none" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path stroke="#3498DB" d="M6 6h8a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-8"></path>
+                                        <line x1="8" y1="6" x2="8" y2="18"></line>
+                                        <line x1="8" y1="12" x2="14" y2="12"></line>
+                                        <line x1="9" y1="3" x2="9" y2="6"></line>
+                                        <line x1="13" y1="3" x2="13" y2="6"></line>
+                                        <line x1="9" y1="18" x2="9" y2="21"></line>
+                                        <line x1="13" y1="18" x2="13" y2="21"></line>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="visible">
+        <div class="modal fade" id="customPrice" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false"
+             data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New price for this vehicle model!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form onkeydown="return event.key != 'Enter';">
+                            <div class="form-group">
+                                <label for="new_price" class="col-form-label">This vehicle cost
+                                    <u>{{activeIndex.priceVehicle}}</u>
+                                    what the new price shall be?</label>
+                                <input type="number" min="0" maxlength="10" size="11" class="form-control"
+                                       id="new_price">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="Close()">Close
+                        </button>
+                        <button type="button" class="btn btn-primary" @click="ChangePrice()">Change vehicle price
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="DisplayThisVehicle" tabindex="-1" aria-labelledby="DisplayThisVehicle"
+             aria-hidden="true" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info" style="color:white;">
+                        <h5 class="modal-title">You're about to display this vehicle in shop</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert">
+                            By clicking on "yes" you will display this vehicle you're currently viewing, so keep in mind
+                            this action
+                            can be reverted at any time.
+                            <div class="mt-3">
+                                <button @click="payForVehicle()" class="btn btn-success" type="button">Yes</button>
+                                <button @click="Close()" class="btn btn-secondary" type="button">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="tryOutVehicle" tabindex="-1" aria-labelledby="pay_for_vehicle" aria-hidden="true"
+             data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info" style="color:white;">
+                        <h5 class="modal-title">Are you sure you want to try this vehicle out?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert">
+                            You will have to pay <strong>${{numberWithCommas(CostForTryOut)}}</strong> for a test drive of this vehicle
+                            <div class="mt-3">
+                                <button @click="tryVehicle(true)" class="btn btn-success" type="button">Yes</button>
+                                <button @click="userDoNotWantPay()" class="btn btn-secondary" type="button">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="toStock" tabindex="-1" aria-labelledby="pay_for_vehicle" aria-hidden="true"
+             data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info" style="color:white;">
+                        <h5 class="modal-title">Buying vehicles to the stock</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert">
+                            Single model costs <strong>{{activeIndex.priceVehicle}}</strong>.
+                            So how many models you want to buy?
+                            <br> <br>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="countnum">How many vehicles you want to order?</label>
+                                <input v-model="buyCount" type="number" value="1" id="countnum" class="form-control"/>
+                            </div>
+                            <br>
+
+                            The final price is: <strong>${{numberWithCommas(activeIndex.realPrice * buyCount)}}</strong>
+                            <div class="mt-3">
+                                <button @click="payForVehicle()" class="btn btn-success" type="button">Yes</button>
+                                <button @click="userDoNotWantPay()" class="btn btn-secondary" type="button">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="buyVehicle" tabindex="-1" aria-labelledby="pay_for_vehicle" aria-hidden="true"
+             data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info" style="color:white;">
+                        <h5 class="modal-title">You're about to buy a vehicle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert">
+                            Are you sure you want to spend
+                            <strong>
+                                <neo v-if="activeIndex.hasPrice != false">{{activeIndex.priceVehicle}}</neo>
+                                <neo v-if="activeIndex.hasPrice != false && activeIndex.vip_price != false">or</neo>
+                                <neo v-if="activeIndex.vip_price != false">{{numberWithCommas(activeIndex.vip_price)}}₿</neo>
+                            </strong>
+                            on this vehicle? isn't there anything better than this?
+                            <div class="mt-3">
+                                <button @click="payForVehicle()" class="btn btn-success" type="button">Yes</button>
+                                <button @click="userDoNotWantPay()" class="btn btn-secondary" type="button">No</button>
+                                <button @click="tryVehicle(false)" v-if="EnableTryOutVehicle" class="btn btn-dark"
+                                        type="button" style="float: right;">Try this vehicle out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="car_compoments" v-if="visible && showStats">
+            <div>
+                <h1>Numbers of seats</h1>
+                <div class="progress_bar" v-bind:style="{ width: (activeIndex.data_1 / 12 * 100) + '%' }">
+                    {{activeIndex.data_1}}
+                </div>
+            </div>
+            <div>
+                <h1>Max gear</h1>
+                <div class="progress_bar" v-bind:style="{ width: (activeIndex.data_2 / 10 * 100) + '%' }">
+                    {{activeIndex.data_2}}
+                </div>
+            </div>
+            <div>
+                <h1>Speed</h1>
+                <div class="progress_bar" v-bind:style="{ width: (activeIndex.speed / 350 * 100) + '%', 'min-width': '40%' }">
+                    <none v-if="MileageFormat == 'MI'">{{activeIndex.speed}} mp/h</none>
+                    <none v-if="MileageFormat == 'KM'">{{activeIndex.speed}} km/h</none>
+                </div>
+            </div>
+            <div>
+                <h1>Fuel</h1>
+                <div class="progress_bar" v-bind:style="{ width: (activeIndex.data_3 / 100 * 100) + '%' }">
+                    {{activeIndex.data_3}}%
+                </div>
+            </div>
+            <div>
+                <h1>Vehicle dirtyness</h1>
+                <div class="progress_bar" v-bind:style="{ width: (activeIndex.data_4 / 15 * 100) + '%' }">
+                    {{activeIndex.data_4}}
+                </div>
+            </div>
+        </div>
+
+        <div id="cars" style="right:0%" v-if="visible">
+            <div class="box-car" v-for="item, index in cars" v-bind:class="{ 'active': item.isActive}">
+                <img v-bind:src="item.image" v-bind:class="{ 'hide-image': item.Hide || item.stored == false}">
+                <h1 v-if="!item.Hide && item.limit != 0" class="indexCount" style="font-size: 1.9vw;">Stock:
+                    {{item.limit}}</h1>
+                <h1 v-if="item.Hide || item.stored == false" class="indexCount" style="font-size: 1.8vw;">
+
+                    <div v-if="!item.stored">
+                        Towed
+                    </div>
+                    <div v-if="item.Hide">
+                        Out of stock
+                    </div>
+
+                </h1>
+            </div>
+        </div>
+
+        <div class="loadingPanel" v-if="loading">
+            <div id="loader"></div>
+            Loading your vehicle, please wait!
+        </div>
+        <div class="blackbar" v-if="visible">
+            <div class="carinfo">
+                <transition name="slide-fade">
+                    <h1 v-if="show" class="carinfo type">{{activeIndex.vehicle_type}}</h1>
+                </transition>
+                <transition name="slide-fade">
+                    <h1 v-if="show" class="carinfo car">{{activeIndex.name}}</h1>
+                </transition>
+
+                <transition name="slide-fade" v-if="activeIndex.vip_price != false">
+                    <h1 v-if="show" class="carinfo price" style="color:#3498db;">
+                        {{numberWithCommas(activeIndex.vip_price)}}₿</h1>
+                </transition>
+
+                <transition name="slide-fade" v-if="activeIndex.hasPrice">
+                    <h1 v-if="show" class="carinfo price">{{activeIndex.priceVehicle}}</h1>
+                </transition>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./scripts/locales.js"></script>
+<script src="./scripts/config.js"></script>
+<script src="./scripts/listener.js"></script>
+</html>

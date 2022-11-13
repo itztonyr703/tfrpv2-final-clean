@@ -1,0 +1,2608 @@
+# Addon guns v2 for QBCore 
+
+This is a **FREE** release!
+
+## Credits
+- Original Model Makers (gta5mods)
+- Xandrice
+- LeSiiN
+- NoobySloth
+- Castar
+- iTzTonyR703 (for V2 support)
+
+## Features
+
+- 92 Add-On Weapons
+- Images for almost every gun / melee
+
+**Supplied Snippets**
+- qb-core V2 supported
+- qb-weapons V2 supported
+- qb-smallresources V2 supported
+- qb-policejob
+- qb-jewelery
+- qb-ambulancejob
+
+## Installation
+- Put the ``custom_weapons`` into your ``resources`` folder.
+- anything past weapondraw is considered useless
+
+
+## Drop first code in ``qb-core/shared/items.lua``
+```lua
+	-- Custom Weapons
+	['weapon_ak47'] 		 		 = {['name'] = 'weapon_ak47', 	 			  	['label'] = 'AK-47', 					['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_assaultrifle.png', 				['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use'},
+	['weapon_de'] 					 = {['name'] = 'weapon_de', 			 	  	['label'] = 'Desert Eagle',			    ['weight'] = 8000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'deagle.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_fnx45'] 				 = {['name'] = 'weapon_fnx45', 	 			  	['label'] = 'FN FNX-45', 				['weight'] = 7000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_combat-pistol.png', 			['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A combat version small firearm designed to be held in one hand'},
+	['weapon_glock17'] 				 = {['name'] = 'weapon_glock17', 			 	['label'] = 'PD Glock 17', 				['weight'] = 7000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'glock-17.png', 						['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'PD GUN'},
+	['weapon_m4'] 					 = {['name'] = 'weapon_m4', 	 			  	['label'] = 'PD M4A1', 					['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_carbinerifle.png',			 	['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A lightweight automatic rifle for the Police'},
+	['weapon_m9'] 					 = {['name'] = 'weapon_m9', 				 	['label'] = 'Beretta M9A3', 			['weight'] = 7000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'm1911.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A M91'},
+	['weapon_m70'] 					 = {['name'] = 'weapon_m70', 	 			  	['label'] = 'M70', 						['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'm70.png',  							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use'},
+	['weapon_m1911'] 				 = {['name'] = 'weapon_m1911', 	 			  	['label'] = 'M1911', 					['weight'] = 7000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'browning.png',  						['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A hefty firearm designed to be held in one hand (or attempted)'},
+	['weapon_uzi'] 					 = {['name'] = 'weapon_uzi', 			 	  	['label'] = 'UZI', 						['weight'] = 10000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'uzi.png', 								['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A handheld lightweight machine gun'},
+	['weapon_mac10'] 				 = {['name'] = 'weapon_mac10', 			 	  	['label'] = 'MAC-10', 					['weight'] = 10000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'mac-10.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A handheld lightweight machine gun'},
+	['weapon_mossberg'] 			 = {['name'] = 'weapon_mossberg', 			 	['label'] = 'Mossberg 500', 			['weight'] = 10000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SHOTGUN',			['image'] = 'mossberg500.png',						['unique'] = true,	 	['useable'] = false,["created"] = nil,	['description'] = 'A sawn-off smoothbore gun for firing small shot at short range'},
+	['weapon_remington'] 			 = {['name'] = 'weapon_remington', 		 	  	['label'] = 'Remington 870', 			['weight'] = 8000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SHOTGUN',			['image'] = 'remington.png', 						['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A pump-action smoothbore gun for firing small shot at short range'},
+	['weapon_scarh'] 				 = {['name'] = 'weapon_scarh', 				 	['label'] = 'PD SCAR-H', 				['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'scar.png',								['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'An extremely versatile assault rifle for any combat situation'},
+	['weapon_shiv'] 				 = {['name'] = 'weapon_shiv', 			 	  	['label'] = 'Shiv', 					['weight'] = 3000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'shiv.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'An instrument composed of a blade fixed into a handle, used for cutting or as a weapon'},
+	['weapon_ar15'] 				 = {['name'] = 'weapon_ar15', 	 	 		 	['label'] = 'PD AR-15', 				['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_mcx.png', 						['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A lightweight automatic rifle for the Police'},
+	['weapon_mk14'] 				 = {['name'] = 'weapon_mk14', 	 			  	['label'] = 'PD MK14', 					['weight'] = 23000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SNIPER',			['image'] = 'mk14.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A very accurate single-fire rifle'},
+	['weapon_huntingrifle'] 		 = {['name'] = 'weapon_huntingrifle', 	 	  	['label'] = 'Hunting Rifle', 			['weight'] = 23000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SNIPER',			['image'] = 'huntingrifle.png', 					['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A very accurate Rifle for hunting'},
+	['weapon_katana'] 				 = {['name'] = 'weapon_katana', 	 		  	['label'] = 'Katana', 					['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'katana.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A single-edged sword that is the longer of a pair worn by the Japanese samurai.'},
+	['weapon_sledgehammer'] 		 = {['name'] = 'weapon_sledgehammer', 	 		['label'] = 'Sledge Hammer', 			['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'sledgehammer.png', 					['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A Sledge Hammer to destroy peoples heads'},
+	['weapon_mp9'] 					 = {['name'] = 'weapon_mp9', 		 	  		['label'] = 'MP9', 						['weight'] = 10000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_carbinerifle', 					['unique'] = true, 		['useable'] = false,["created"] = nil,  ['description'] = 'A handheld lightweight machine gun'},
+	['weapon_m110'] 				 = {['name'] = 'weapon_m110', 	 	  			['label'] = 'M110', 					['weight'] = 23000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_SNIPER',			['image'] = 'weapon_carbinerifle', 					['unique'] = true, 		['useable'] = false,["created"] = nil,  ['description'] = 'A very accurate single-fire rifle'},
+	['weapon_hk416'] 				 = {['name'] = 'weapon_hk416', 	 	  			['label'] = 'HK-416', 					['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_carbinerifle.png', 				['unique'] = true, 		['useable'] = false,["created"] = nil,  ['description'] = 'A lightweight automatic rifle'},	
+	['weapon_a91'] 		 			 = {['name'] = 'weapon_a91', 	 	  			['label'] = 'A91', 						['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_a91.png', 						['unique'] = true, 		['useable'] = false,["created"] = nil,  ['description'] = 'A lightweight automatic rifle'},
+	['weapon_acr'] 		 			 = {['name'] = 'weapon_acr', 	 	  			['label'] = 'ACR', 						['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_acr.png', 						['unique'] = true, 		['useable'] = false,["created"] = nil,  ['description'] = 'A lightweight automatic rifle'},
+	['weapon_aek971'] 				 = {['name'] = 'weapon_aek971', 	 			['label'] = 'AEK971', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_aek971.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_ak5c'] 				 = {['name'] = 'weapon_ak5c', 	 	  			['label'] = 'AK5C', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_ak5c.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_aks'] 		 			 = {['name'] = 'weapon_aks', 	 	  			['label'] = 'AKS', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_aks.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_an94'] 				 = {['name'] = 'weapon_an94', 	 	  			['label'] = 'AN94', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_an94.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_aug'] 		 			 = {['name'] = 'weapon_aug', 	 	  			['label'] = 'AUG', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_aug.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_aug_a3'] 				 = {['name'] = 'weapon_aug_a3', 	 		  	['label'] = 'AUG_A3',		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_aug_a3.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_cbj_ms'] 				 = {['name'] = 'weapon_cbj_ms', 	 		 	['label'] = 'CBJ-MS', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_cbj_ms.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_cz61'] 				 = {['name'] = 'weapon_cz61', 	 			  	['label'] = 'CZ61', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_cz61.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_fn57'] 				 = {['name'] = 'weapon_fn57', 	 			  	['label'] = 'FN57', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_fn57.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_g3a3'] 				 = {['name'] = 'weapon_g3a3', 	 			  	['label'] = 'G3A3', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_g3a3.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_galil'] 				 = {['name'] = 'weapon_galil', 	 			  	['label'] = 'GALIL', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_galil.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_glock18'] 				 = {['name'] = 'weapon_glock18', 			  	['label'] = 'GLOCK-18', 	['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_glock18.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_groza4'] 				 = {['name'] = 'weapon_groza4', 			  	['label'] = 'GROZA4', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_groza4.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_hipower'] 				 = {['name'] = 'weapon_hipower', 			   	['label'] = 'Browning Hi-Power', ['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_hipower.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_lawrc45'] 				 = {['name'] = 'weapon_lawrc45', 			   	['label'] = 'LAWRC-45', 	['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_lawrc.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_m4a1'] 				 = {['name'] = 'weapon_m4a1', 	 			  	['label'] = 'M4A1', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_m4a1.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_m4a1_02'] 				 = {['name'] = 'weapon_m4a1_02', 			  	['label'] = 'M4A1 II', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_m4a1_02.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_m16a4'] 				 = {['name'] = 'weapon_m16a4', 	 			  	['label'] = 'M16A4', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_m16a4.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_m39'] 		 			 = {['name'] = 'weapon_m39', 	 	 		 	['label'] = 'M39', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_m39.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_m416'] 				 = {['name'] = 'weapon_m416', 	 	 		 	['label'] = 'M416', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_m416.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_mk18'] 				 = {['name'] = 'weapon_mk18', 	 	  			['label'] = 'MK18', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_mk18.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_mp5'] 					 = {['name'] = 'weapon_mp5', 	 	  			['label'] = 'MP5', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_mp5.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_mp7'] 					 = {['name'] = 'weapon_mp7', 	 	  			['label'] = 'MP7', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_mp7.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_mpx'] 					 = {['name'] = 'weapon_mpx', 	 	 		 	['label'] = 'MPX', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_mpx.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_mtar21'] 				 = {['name'] = 'weapon_mtar21', 	 		 	['label'] = 'MTAR21', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_mtar21.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_ppsh'] 				 = {['name'] = 'weapon_ppsh', 	 	 		 	['label'] = 'PPSH', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_ppsh.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_qsz92'] 				 = {['name'] = 'weapon_qsz92', 	 	 		 	['label'] = 'QSZ92', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_qsz92.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_sa58'] 				 = {['name'] = 'weapon_sa58', 	 	 		 	['label'] = 'SA58', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_sa58.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_scorpion'] 			 = {['name'] = 'weapon_scorpion', 			   	['label'] = 'SCORPION', 	['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_scorpion.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_sg553'] 				 = {['name'] = 'weapon_sg553', 	 	  			['label'] = 'SG553', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_sg553.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_warlord_ak']  			 = {['name'] = 'weapon_warlord_ak', 		  	['label'] = 'WARLORD', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_warlord.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_ak47_02']  			 = {['name'] = 'weapon_ak47_02',   				['label'] = 'AK47 II', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_ak47_02.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_ak47_03']  			 = {['name'] = 'weapon_ak47_03',   				['label'] = 'AK47 III', 	['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_ak47_03.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_vector'] 				 = {['name'] = 'weapon_vector', 	 		 	['label'] = 'Vector', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_vector.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_honeybadger'] 			 = {['name'] = 'weapon_honeybadger', 			['label'] = 'Honeybadger', 	['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_honeybadger.png', ['unique'] = true, 	['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_votovepr'] 			 = {['name'] = 'weapon_votovepr', 				['label'] = 'Molot Vepr-12', ['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_votovepr.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_dp12'] 				 = {['name'] = 'weapon_dp12', 					['label'] = 'DP-12', 		['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SHOTGUN',			['image'] = 'weapon_dp12.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_ump'] 		 			 = {['name'] = 'weapon_ump', 					['label'] = 'UMP', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',				['image'] = 'weapon_ump.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_fal'] 		 			 = {['name'] = 'weapon_fal', 					['label'] = 'FAL', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_fal.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_mcx'] 		 			 = {['name'] = 'weapon_mcx', 					['label'] = 'MCX', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_mcx.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,     	['description'] = 'A lightweight automatic rifle'},
+	['weapon_dildo'] 				 = {['name'] = 'weapon_dildo', 		 			['label'] = 'Dildo Bat', 	['weight'] = 1000, 			['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_dildo.png',	 	['unique'] = true, 		['useable'] = true, 						['description'] = 'It explains itself...'},
+	['weapon_baton'] 				 = {['name'] = 'weapon_baton', 		 			['label'] = 'PD Baton', 	['weight'] = 1000, 			['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_baton.png', 	['unique'] = true, 		['useable'] = true, 						['description'] = 'It explains itself...'},
+	['weapon_colt_m45a1'] 			 = {['name'] = 'weapon_colt_m45a1', 			['label'] = 'Colt M45A1',	['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_colt_m45a1.png', ['unique'] = true, 	['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_vp9'] 					 = {['name'] = 'weapon_vp9', 					['label'] = 'HK VP9',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_vp9.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_kimber'] 				 = {['name'] = 'weapon_kimber', 	 			['label'] = 'Kimber Eclipse', ['weight'] = 8000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_kimber.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_p416'] 				 = {['name'] = 'weapon_p416', 		 		 	['label'] = 'POF P416',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_p416.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_akcompact'] 			 = {['name'] = 'weapon_akcompact', 		 		['label'] = 'AK Compact',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_akcompact.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_l8a2'] 			 	 = {['name'] = 'weapon_l8a2', 		 			['label'] = 'L8A2',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_l8a2.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_famas'] 			 	 = {['name'] = 'weapon_famas', 		 			['label'] = 'FAMAS',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_famas.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_beanbag'] 			 	 = {['name'] = 'weapon_beanbag', 		 			['label'] = 'PD beanbag',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_SHOTGUN',			['image'] = 'weapon_beanbag.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_msbs'] 			 	 = {['name'] = 'weapon_msbs', 		 			['label'] = 'MSBS',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_msbs.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_pp19bizon'] 			 = {['name'] = 'weapon_pp19bizon', 		 			['label'] = 'PP19 Bizon',		['weight'] = 8000, 			['type'] = 'weapon', 	['ammotype'] = 'AMMO_SMG',			['image'] = 'weapon_pp19bizon.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,		['description'] = 'A .50 caliber firearm designed to be held with both hands'},
+	['weapon_tkatana'] 				 = {['name'] = 'weapon_tkatana', 	 		  	['label'] = 'Thermal Katana', 					['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'tkatana.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A single-edged sword that is the longer of a pair worn by the Japanese samurai.'},
+	['weapon_blade'] 				 = {['name'] = 'weapon_blade', 	 		  	['label'] = 'BLADE', 					['weight'] = 13000, 	['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_blade.png', 							['unique'] = true, 		['useable'] = false,["created"] = nil,	['description'] = 'A single-edged sword that is the longer of a pair worn by the Japanese samurai.'},
+
+```
+
+## Drop the next code in ``qb-core/shared/weapons.lua``
+
+```lua
+	[`weapon_ak47`] 		 		= {['name'] = 'weapon_ak47', 				['label'] = 'AK-47', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m70`] 		 	 		= {['name'] = 'weapon_m70', 				['label'] = 'M70', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_de`] 			 		= {['name'] = 'weapon_de', 					['label'] = 'Desert Eagle', 			['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_fnx45`] 			 	= {['name'] = 'weapon_fnx45', 				['label'] = 'FN FNX45', 				['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_glock17`] 			 	= {['name'] = 'weapon_glock17', 			['label'] = 'PD Glock 17', 				['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_m4`] 		 			= {['name'] = 'weapon_m4', 	 				['label'] = 'PD M4A1', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m9`] 			 		= {['name'] = 'weapon_m9', 					['label'] = 'Beretta M9A3', 			['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_m1911`] 			 	= {['name'] = 'weapon_m1911', 				['label'] = 'M1911', 					['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_uzi`] 			 		= {['name'] = 'weapon_uzi', 				['label'] = 'UZI', 						['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
+	[`weapon_mac10`] 				= {['name'] = 'weapon_mac10', 				['label'] = 'MAC-10', 					['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
+	[`weapon_mossberg`] 		 	= {['name'] = 'weapon_mossberg', 			['label'] = 'Mossberg 500', 			['ammotype'] = 'AMMO_SHOTGUN',		['damagereason'] = 'Devastated / Pulverized / Shotgunned'},
+	[`weapon_remington`] 		 	= {['name'] = 'weapon_remington', 			['label'] = 'Remington 870', 			['ammotype'] = 'AMMO_SHOTGUN',		['damagereason'] = 'Devastated / Pulverized / Shotgunned'},
+	[`weapon_scarh`] 		 		= {['name'] = 'weapon_scarh', 				['label'] = 'PD SCAR-H', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_shiv`] 				= {['name'] = 'weapon_shiv', 				['label'] = 'Shiv', 					['ammotype'] = nil,					['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_katana`] 				= {['name'] = 'weapon_katana', 				['label'] = 'Katana', 					['ammotype'] = nil,					['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_sledgehammer`] 		= {['name'] = 'weapon_sledgehammer', 		['label'] = 'Sledge Hammer', 			['ammotype'] = nil,					['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
+    [`weapon_ar15`] 				= {['name'] = 'weapon_ar15', 	 			['label'] = 'PD AR-15', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mk14`] 				= {['name'] = 'weapon_mk14', 	 			['label'] = 'PD MK14', 					['ammotype'] = 'AMMO_SNIPER',		['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_huntingrifle`] 		= {['name'] = 'weapon_huntingrifle', 	 	['label'] = 'Hunting Rifle', 			['ammotype'] = 'AMMO_SNIPER',		['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_mp9`] 					= {['name'] = 'weapon_mp9', 				['label'] = 'MP9', 						['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
+	[`weapon_m110`] 				= {['name'] = 'weapon_m110', 	 			['label'] = 'M110', 					['ammotype'] = 'AMMO_SNIPER',		['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_hk416`] 		 		= {['name'] = 'weapon_hk416', 	 			['label'] = 'HK-416', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_a91`] 		 			= {['name'] = 'weapon_a91', 	 			['label'] = 'A91', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_acr`] 		 			= {['name'] = 'weapon_acr', 	 			['label'] = 'ACR', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_aek971`] 	 			= {['name'] = 'weapon_aek971', 				['label'] = 'AEK971', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ak5c`] 	 			= {['name'] = 'weapon_ak5c', 	 			['label'] = 'AK5C', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_aks`] 		 			= {['name'] = 'weapon_aks', 	 			['label'] = 'AKS', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_an94`] 	 			= {['name'] = 'weapon_an94', 	 			['label'] = 'AN94', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_aug`] 		 			= {['name'] = 'weapon_aug', 	 			['label'] = 'AUG', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_aug_a3`] 	 			= {['name'] = 'weapon_aug_a3', 				['label'] = 'AUG_A3', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_cbj_ms`] 	 			= {['name'] = 'weapon_cbj_ms', 				['label'] = 'CBJ-MS', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_cz61`] 	 			= {['name'] = 'weapon_cz61', 			 	['label'] = 'CZ61', 					['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_fn57`] 	 			= {['name'] = 'weapon_fn57', 	 			['label'] = 'Fn57', 					['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_g3a3`] 	 			= {['name'] = 'weapon_g3a3', 			 	['label'] = 'g3A3',						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_galil`] 	 			= {['name'] = 'weapon_galil', 	 			['label'] = 'GALIL', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_groza4`] 	 			= {['name'] = 'weapon_groza4', 				['label'] = 'GROZA4', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_hipower`] 	 			= {['name'] = 'weapon_hipower', 			['label'] = 'HIPOWER', 					['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_lawrc45`] 	 			= {['name'] = 'weapon_lawrc45', 			['label'] = 'LAWRC45', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m4a1`] 	 			= {['name'] = 'weapon_m4a1', 			 	['label'] = 'M4A1', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m4a1_02`] 	 			= {['name'] = 'weapon_m4a1_02', 			['label'] = 'M4A1_02', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m16a4`] 	 			= {['name'] = 'weapon_m16a4', 	 			['label'] = 'M16A4', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m39`] 		 			= {['name'] = 'weapon_m39', 	 			['label'] = 'M39', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m416`] 	 			= {['name'] = 'weapon_m416', 	 			['label'] = 'M416', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mk18`] 	 			= {['name'] = 'weapon_mk18', 	 			['label'] = 'Mk18', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mp5`] 		 			= {['name'] = 'weapon_mp5', 	 			['label'] = 'MP5', 						['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mp7`] 		 			= {['name'] = 'weapon_mp7', 			 	['label'] = 'MP7', 						['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mpx`] 		 			= {['name'] = 'weapon_mpx', 			 	['label'] = 'MPX', 						['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mtar21`] 	 			= {['name'] = 'weapon_mtar21', 				['label'] = 'MTAR21', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ppsh`] 	 			= {['name'] = 'weapon_ppsh', 	 			['label'] = 'PPSH', 					['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_qsz92`] 	 			= {['name'] = 'weapon_qsz92', 	 			['label'] = 'QSZ92', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_sa58`] 	 			= {['name'] = 'weapon_sa58', 	 			['label'] = 'SA58', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_scorpion`] 			= {['name'] = 'weapon_scorpion', 			['label'] = 'SCORPION',					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_sg553`] 	 			= {['name'] = 'weapon_sg553', 	 			['label'] = 'SG553', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_warlord_ak`]  			= {['name'] = 'weapon_warlord_ak',			['label'] = 'WARLORD', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ak47_02`]  			= {['name'] = 'weapon_ak47_02', 			['label'] = 'AK47 II', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ak47_03`]  			= {['name'] = 'weapon_ak47_03', 			['label'] = 'AK47 III', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_vector`] 				= {['name'] = 'weapon_vector', 				['label'] = 'Vector', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_honeybadger`] 	 		= {['name'] = 'weapon_honeybadger', 		['label'] = 'Honeybadger', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_votovepr`] 	 		= {['name'] = 'weapon_votovepr', 			['label'] = 'Molot Vepr-12', 			['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_dp12`] 	 			= {['name'] = 'weapon_dp12', 				['label'] = 'DP-12', 					['ammotype'] = 'AMMO_SHOTGUN',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ump`] 	 				= {['name'] = 'weapon_ump', 				['label'] = 'UMP', 						['ammotype'] = 'AMMO_SMG',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_fal`] 	 				= {['name'] = 'weapon_fal', 				['label'] = 'FN FAL', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_mcx`] 	 				= {['name'] = 'weapon_mcx', 				['label'] = 'MCX', 						['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_dildo`] 	 			= {['name'] = 'weapon_dildo', 				['label'] = 'Dildo Bat', 				['weapontype'] = 'Melee',			['ammotype'] = nil,	['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
+	[`weapon_baton`] 	 			= {['name'] = 'weapon_baton', 				['label'] = 'PD Baton', 				['weapontype'] = 'Melee',			['ammotype'] = nil,	['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
+	[`weapon_colt_m45a1`] 			= {['name'] = 'weapon_colt_m45a1', 			['label'] = 'Colt M45A1', 				['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_vp9`] 			 		= {['name'] = 'weapon_vp9', 				['label'] = 'HK VP9', 					['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_kimber`] 			 	= {['name'] = 'weapon_kimber', 				['label'] = 'Kimber Eclipse', 			['ammotype'] = 'AMMO_PISTOL',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_p416`] 			 	= {['name'] = 'weapon_p416', 				['label'] = 'POF P416', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_akcompact`] 			= {['name'] = 'weapon_akcompact', 			['label'] = 'AK COMPACT', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_pp19bizon`] 				= {['name'] = 'weapon_pp19bizon', 				['label'] = 'PP19 Bizon', 					['ammotype'] = 'AMMO_SMG',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_famas`] 				= {['name'] = 'weapon_famas', 				['label'] = 'FAMAS', 					['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_beanbag`] 				= {['name'] = 'weapon_beanbag', 			['label'] = 'PD Beanbag', 				['ammotype'] = 'AMMO_SHOTGUN',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_msbs`] 				= {['name'] = 'weapon_msbs', 			['label'] = 'MSBS', 				['ammotype'] = 'AMMO_RIFLE',		['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_tkatana`] 				= {['name'] = 'weapon_tkatana', 				['label'] = 'Thermal Katana', 					['ammotype'] = nil,					['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_blade`] 				= {['name'] = 'weapon_blade', 				['label'] = 'BLADE', 					['ammotype'] = nil,					['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+
+```
+
+## Drop the next code in ``qb-weapons/config.lua``
+
+```lua
+    --Custom Weapons
+['weapon_ak47'] 			= 0.15,
+    ['weapon_de'] 	                = 0.15,
+    ['weapon_fnx45'] 			= 0.15,
+    ['weapon_glock17'] 		        = 0.15,
+    ['weapon_m4'] 			= 0.15,
+    ['weapon_hk416'] 			= 0.15,
+    ['weapon_mk14'] 			= 0.15,
+    ['weapon_m110'] 			= 0.15,
+    ['weapon_huntingrifle'] 	        = 0.20,
+    ['weapon_ar15'] 			= 0.15,
+    ['weapon_m9'] 	                = 0.15,
+    ['weapon_m70'] 			= 0.15,
+    ['weapon_m1911'] 		        = 0.15,
+    ['weapon_mac10'] 			= 0.15,
+    ['weapon_uzi'] 	                = 0.15,
+    ['weapon_mp9'] 	                = 0.15,
+    ['weapon_mossberg'] 		= 0.15,
+    ['weapon_remington'] 		= 0.15,
+    ['weapon_scarh'] 			= 0.15,
+    ['weapon_shiv'] 	                = 0.15,
+    ['weapon_katana'] 	                = 0.15,
+    ['weapon_a91'] 	        			= 0.15,
+    ['weapon_acr'] 	        = 0.15,
+    ['weapon_aek971'] 	        = 0.15,
+    ['weapon_ak5c'] 	        = 0.15,
+    ['weapon_aks'] 	        = 0.15,
+    ['weapon_an94'] 	        = 0.15,
+    ['weapon_aug'] 	        = 0.15,
+    ['weapon_aug_a3'] 	        = 0.15,
+    ['weapon_cbj_ms'] 	        = 0.15,
+    ['weapon_cz61'] 	        = 0.15,
+    ['weapon_fn57'] 	        = 0.15,
+    ['weapon_g3a3'] 	        = 0.15,
+    ['weapon_galil'] 	        = 0.15,
+    ['weapon_groza4'] 	        = 0.15,
+    ['weapon_hipower'] 	        = 0.15,
+    ['weapon_lawrc45'] 	        = 0.15,
+    ['weapon_m4a1'] 	        = 0.15,
+    ['weapon_m4a1_02'] 	        = 0.15,
+    ['weapon_m16a4'] 	        = 0.15,
+    ['weapon_m39'] 	        = 0.15,
+    ['weapon_m416'] 	        = 0.15,
+    ['weapon_mk18'] 	        = 0.15,
+    ['weapon_mp5'] 	        = 0.15,
+    ['weapon_mp7'] 	        = 0.15,
+    ['weapon_mpx'] 	        = 0.15,
+    ['weapon_mtar21'] 	        = 0.15,
+    ['weapon_ppsh'] 	        = 0.15,
+    ['weapon_qsz92'] 	        = 0.15,
+    ['weapon_sa58'] 	        = 0.15,
+    ['weapon_scorpion'] 	        = 0.15,
+    ['weapon_sg553'] 	        = 0.15,
+    ['weapon_warlord_ak'] 	        = 0.15,
+	['weapon_ak47_02'] 	        = 0.15,
+	['weapon_ak47_03'] 	        = 0.15,
+	['weapon_ump'] 	        = 0.15,
+	['weapon_fal'] 	        = 0.15,	
+	['weapon_mcx'] 	        = 0.15,
+	['weapon_dildo'] 	        = 0.15,	
+	['weapon_baton'] 	        = 0.15,	
+	['weapon_vp9'] 	        = 0.15,	
+	['weapon_kimber'] 	        = 0.15,	
+	['weapon_p416'] 	        = 0.15,	
+	['weapon_akcompact'] 	        = 0.15,	
+	['weapon_pp19bizon'] 	        = 0.15,	
+	['weapon_tkatana'] 	        = 0.15,	
+	['weapon_blade'] 	        = 0.15,	
+	['weapon_famas'] 	        = 0.15,	
+	['weapon_beanbag'] 	        = 0.15,	
+	['weapon_ak47_02'] 	        = 0.15,	
+	['weapon_ak47_03'] 	        = 0.15,	
+	['weapon_assaultrifle_02'] 	        = 0.15,	
+	['weapon_assaultrifle_03'] 	        = 0.15,	
+	['weapon_assaultrifle_04'] 	        = 0.15,	
+	['weapon_assaultrifle_05'] 	        = 0.15,	
+	['weapon_assaultrifle_06'] 	        = 0.15,	
+	['weapon_assaultrifle_07'] 	        = 0.15,	
+	['weapon_assaultrifle_08'] 	        = 0.15,	
+	['weapon_assaultrifle_09'] 	        = 0.15,	
+	['weapon_assaultrifle_10'] 	        = 0.15,	
+	['weapon_assaultrifle_11'] 	        = 0.15,	
+	['weapon_assaultrifle_12'] 	        = 0.15,	
+	['weapon_assaultrifle_13'] 	        = 0.15,	
+	['weapon_assaultrifle_14'] 	        = 0.15,	
+	['weapon_assaultrifle_15'] 	        = 0.15,	
+	['weapon_assaultrifle_16'] 	        = 0.15,	
+	['weapon_assaultrifle_17'] 	        = 0.15,	
+	['weapon_assaultrifle_18'] 	        = 0.15,	
+	['weapon_assaultrifle_19'] 	        = 0.15,	
+	['weapon_assaultrifle_20'] 	        = 0.15,	
+	['weapon_assaultrifle_21'] 	        = 0.15,	
+	['weapon_assaultrifle_22'] 	        = 0.15,	
+	['weapon_assaultrifle_23'] 	        = 0.15,	
+	['weapon_assaultrifle_24'] 	        = 0.15,	
+	['weapon_assaultrifle_25'] 	        = 0.15,	
+	['weapon_assaultrifle_26'] 	        = 0.15,	
+	['weapon_assaultrifle_27'] 	        = 0.15,	
+	['weapon_assaultrifle_28'] 	        = 0.15,	
+	['weapon_assaultrifle_29'] 	        = 0.15,	
+	['weapon_assaultrifle_30'] 	        = 0.15,	
+	['weapon_assaultrifle_31'] 	        = 0.15,	
+	['weapon_assaultrifle_32'] 	        = 0.15,	
+	['weapon_assaultrifle_33'] 	        = 0.15,	
+```
+## Drop the next code in ``qb-weapons/config.lua`` (about line 209)
+
+```lua
+    ['WEAPON_M9'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_M9_CLIP_01',
+            item = 'pistol_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_M9_CLIP_02',
+            item = 'pistol_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_M1911'] = {
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_DE'] = {
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_FNX45'] = {
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_MP9'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_MP9_CLIP_01',
+            item = 'microsmg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_MP9_CLIP_02',
+            item = 'microsmg_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+    },
+    ['WEAPON_UZI'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_01',
+            item = 'microsmg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_02',
+            item = 'microsmg_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_MAC10'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_01',
+            item = 'microsmg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_02',
+            item = 'microsmg_extendedclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_PI_FLSH',
+            item = 'pistol_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_AK47'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_AK47_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_AK47_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_M70'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_M70_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_M110'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_M110_CLIP_01',
+            item = 'marksmanrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_M110_CLIP_02',
+            item = 'marksmanrifle_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+    },
+	--SKINS
+	    ['WEAPON_ASSAULTRIFLE_02'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },  
+	['WEAPON_ASSAULTRIFLE_03'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_04'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_05'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_06'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_07'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_08'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_09'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_10'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_11'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_12'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_13'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_14'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_15'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_16'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_17'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_18'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_19'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_20'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_21'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_22'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_23'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_24'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_25'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_26'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_27'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_28'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_29'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_30'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_31'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_32'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_ASSAULTRIFLE_33'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+-----------------------------------------------------------------
+	['WEAPON_VECTOR'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_HONEYBADGER'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_VOTOVEPR'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_DP12'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_UMP'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_FAL'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+	['WEAPON_MCX'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_CLIP_03',
+            item = 'assaultrifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_ASSAULTRIFLE_VARMOD_LUXE',
+            item = 'assaultrifle_luxuryfinish',
+        },
+    },
+    ['WEAPON_COLT_M45A1'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_hipower_mag1',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_VP9'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_hipower_mag1',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_KIMBER'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_hipower_mag1',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_P416'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_CARBINERIFLE_CLIP_01',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_CARBINERIFLE_CLIP_02',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['drum'] = {
+            component = 'COMPONENT_CARBINERIFLE_CLIP_03',
+            item = 'carbinerifle_drum',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MEDIUM',
+            item = 'carbinerifle_scope',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'COMPONENT_AT_AR_AFGRIP',
+            item = 'rifle_grip',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_CARBINERIFLE_VARMOD_LUXE',
+            item = 'carbinerifle_luxuryfinish',
+        },
+    },		
+    ['WEAPON_BEANBAG'] = {
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_SR_SUPP',
+            item = 'shotgun_suppressor',
+        },
+        ['luxuryfinish'] = {
+            component = 'COMPONENT_PUMPSHOTGUN_VARMOD_LOWRIDER',
+            item = 'pumpshotgun_luxuryfinish',
+        },
+    },
+    ['WEAPON_HK416'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_HK416_CLIP_01',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_HK416_CLIP_02',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+    },
+```
+
+## Replace the next code in ``qb-smallresources/client/weapdraw.lua``
+
+```lua
+local weapons = {
+	--Custom Weapon
+	'WEAPON_AK47',
+	'WEAPON_M9',
+	'WEAPON_FNX45',
+	'WEAPON_DE',
+	'WEAPON_GLOCK17',
+	'WEAPON_M4',
+	'WEAPON_HK416',
+	'WEAPON_MK14',
+	'WEAPON_HUNTINGRIFLE',
+	'WEAPON_AR15',
+	'WEAPON_M70',
+	'WEAPON_M1911',
+	'WEAPON_MAC10',
+	'WEAPON_UZI',
+	'WEAPON_MP9',
+	'WEAPON_M110',
+	'WEAPON_MOSSBERG',
+	'WEAPON_REMINGTON',
+	'WEAPON_SCARH',
+	'WEAPON_SHIV',
+	'WEAPON_KATANA',
+	'WEAPON_SLEDGEHAMMER',
+	'WEAPON_ASSAULTRIFLE',
+	'WEAPON_ASSAULTRIFLE_02',
+	'WEAPON_ASSAULTRIFLE_03',
+	'WEAPON_ASSAULTRIFLE_04',
+	'WEAPON_ASSAULTRIFLE_05',
+	'WEAPON_ASSAULTRIFLE_06',
+	'WEAPON_ASSAULTRIFLE_07',
+	'WEAPON_ASSAULTRIFLE_08',
+	'WEAPON_ASSAULTRIFLE_09',
+	'WEAPON_ASSAULTRIFLE_10',
+	'WEAPON_ASSAULTRIFLE_11',
+	'WEAPON_ASSAULTRIFLE_12',
+	'WEAPON_ASSAULTRIFLE_13',
+	'WEAPON_ASSAULTRIFLE_14',
+	'WEAPON_ASSAULTRIFLE_15',
+	'WEAPON_ASSAULTRIFLE_16',
+	'WEAPON_ASSAULTRIFLE_17',
+	'WEAPON_ASSAULTRIFLE_18',
+	'WEAPON_ASSAULTRIFLE_19',
+	'WEAPON_ASSAULTRIFLE_20',
+	'WEAPON_ASSAULTRIFLE_21',
+	'WEAPON_ASSAULTRIFLE_22',
+	'WEAPON_ASSAULTRIFLE_23',
+	'WEAPON_ASSAULTRIFLE_24',
+	'WEAPON_ASSAULTRIFLE_25',
+	'WEAPON_ASSAULTRIFLE_26',
+	'WEAPON_ASSAULTRIFLE_27',
+	'WEAPON_ASSAULTRIFLE_28',
+	'WEAPON_ASSAULTRIFLE_29',
+	'WEAPON_ASSAULTRIFLE_30',
+	'WEAPON_ASSAULTRIFLE_31',
+	'WEAPON_ASSAULTRIFLE_32',
+	'WEAPON_ASSAULTRIFLE_33',
+	'WEAPON_CARBINERIFLE',
+	'WEAPON_ADVANCEDRIFLE',
+	'WEAPON_SPECIALCARBINE',
+	'WEAPON_BULLPUPRIFLE',
+	'WEAPON_COMPACTRIFLE',
+	'WEAPON_MG',
+	'WEAPON_COMBATMG',
+	'WEAPON_GUSENBERG',
+	'WEAPON_SNIPERRIFLE',
+	'WEAPON_HEAVYSNIPER',
+	'WEAPON_MARKSMANRIFLE',
+	'WEAPON_GRENADELAUNCHER',
+	'WEAPON_RPG',
+	'WEAPON_STINGER',
+	'WEAPON_MINIGUN',
+	'WEAPON_GRENADE',
+	'WEAPON_STICKYBOMB',
+	'WEAPON_SMOKEGRENADE',
+	'WEAPON_BZGAS',
+	'WEAPON_MOLOTOV',
+	'WEAPON_DIGISCANNER',
+	'WEAPON_FIREWORK',
+	'WEAPON_MUSKET',
+	'WEAPON_STUNGUN',
+	'WEAPON_HOMINGLAUNCHER',
+	'WEAPON_PROXMINE',
+	'WEAPON_FLAREGUN',
+	'WEAPON_MARKSMANPISTOL',
+	'WEAPON_RAILGUN',
+	'WEAPON_DBSHOTGUN',
+	'WEAPON_AUTOSHOTGUN',
+	'WEAPON_COMPACTLAUNCHER',
+	'WEAPON_PIPEBOMB',
+	'WEAPON_DOUBLEACTION',
+	'WEAPON_AK47',
+	'WEAPON_M9',
+	'WEAPON_FNX45',
+	'WEAPON_DE',
+	'WEAPON_GLOCK17',
+	'WEAPON_M4',
+	'WEAPON_HK416',
+	'WEAPON_MK14',
+	'WEAPON_HUNTINGRIFLE',
+	'WEAPON_AR15',
+	'WEAPON_M70',
+	'WEAPON_M1911',
+	'WEAPON_MAC10',
+	'WEAPON_UZI',
+	'WEAPON_MP9',
+	'WEAPON_M110',
+	'WEAPON_MOSSBERG',
+	'WEAPON_REMINGTON',
+	'WEAPON_SCARH',
+	'WEAPON_SHIV',
+	'WEAPON_KATANA',
+	'WEAPON_A91',
+	'WEAPON_ACR',
+	'WEAPON_AEK971',
+	'WEAPON_AK5C',
+	'WEAPON_AKS',
+	'WEAPON_AN94',
+	'WEAPON_AUG',
+	'WEAPON_AUG_A3',
+	'WEAPON_CBJ_MS',
+	'WEAPON_G3A3',
+	'WEAPON_GALIL',
+	'WEAPON_GROZA4',
+	'WEAPON_HK45C',
+	'WEAPON_LAWRC45',
+	'WEAPON_M4A1',
+	'WEAPON_M4A1_02',
+	'WEAPON_M16A4',
+	'WEAPON_M39',
+	'WEAPON_M416',
+	'WEAPON_MK18',
+	'WEAPON_MP5',
+	'WEAPON_MP7',
+	'WEAPON_MPX',
+	'WEAPON_MSBS',
+	'WEAPON_MTAR21',
+	'WEAPON_PPSH',
+	'WEAPON_QSZ92',
+	'WEAPON_SA58',
+	'WEAPON_SCORPION',
+	'WEAPON_SG553',
+	'WEAPON_WARLORD',
+	'WEAPON_VECTOR',
+	'WEAPON_HONEYBADGER',
+	'WEAPON_VOTOVEPR',
+	'WEAPON_DP12',
+	'WEAPON_UMP',
+	'WEAPON_FAL',
+	'WEAPON_MCX',
+	'WEAPON_DILDO',
+	'WEAPON_BATON',
+	'WEAPON_COLT_M45A1',
+	'WEAPON_VP9',
+	'WEAPON_KIMBER',
+	'WEAPON_P416',
+	'WEAPON_AKCOMPACT',
+	'WEAPON_PP19BIZON',
+	'WEAPON_TKATANA',
+	'WEAPON_BLADE',
+	'WEAPON_FAMAS',
+	'WEAPON_BEANBAG',
+	'WEAPON_AK47_02',
+	'WEAPON_AK47_03',
+}
+--Weapons that require the Police holster animation
+local holsterableWeapons = {
+	--'WEAPON_STUNGUN',
+	--Custom Weapon
+	'WEAPON_DE',
+	'WEAPON_GLOCK17',
+	'WEAPON_M9',
+	'WEAPON_M1911',
+	'WEAPON_FNX45',
+	'WEAPON_PISTOL',
+	'WEAPON_PISTOL_MK2',
+	'WEAPON_COMBATPISTOL',
+	'WEAPON_APPISTOL',
+	'WEAPON_PISTOL50',
+	'WEAPON_REVOLVER',
+	'WEAPON_SNSPISTOL',
+	'WEAPON_HEAVYPISTOL',
+	'WEAPON_FNX45',
+	'WEAPON_CZ61',
+	'WEAPON_FN57',
+	'WEAPON_HIPOWER',
+	'WEAPON_GLOCK18',
+	'WEAPON_VINTAGEPISTOL'
+}
+```
+
+## Drop the next code in ``qb-smallresources/client/recoil.lua`` ( LINE 107 )
+
+```lua
+	-- CUSTOM WEAPONS
+	[GetHashKey("weapon_ak47")] = 0.5,
+	[GetHashKey("weapon_de")] = 0.5,
+	[GetHashKey("weapon_fnx45")] = 0.3,
+	[GetHashKey("weapon_glock17")] = 0.3,
+	[GetHashKey("weapon_m4")] = 0.3,
+	[GetHashKey("weapon_hk416")] = 0.3,
+	[GetHashKey("weapon_mk14")] = 0.4,
+	[GetHashKey("weapon_m110")] = 0.4,
+	[GetHashKey("weapon_huntingrifle")] = 0.4,
+	[GetHashKey("weapon_ar15")] = 0.4,
+	[GetHashKey("weapon_m9")] = 0.4,
+	[GetHashKey("weapon_m70")] = 0.5,
+	[GetHashKey("weapon_m1911")] = 0.4,
+	[GetHashKey("weapon_mac10")] = 0.7,
+	[GetHashKey("weapon_uzi")] = 0.7,
+	[GetHashKey("weapon_mp9")] = 0.7,
+	[GetHashKey("weapon_mossberg")] = 0.7,
+	[GetHashKey("weapon_remington")] = 0.7,
+	[GetHashKey("weapon_scarh")] = 0.5,
+```
+## Replace the next code in ``qb-jewelery/config.lua``
+
+```lua
+Config.WhitelistedWeapons = {
+    [`weapon_assaultrifle`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_carbinerifle`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_pumpshotgun`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_sawnoffshotgun`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_compactrifle`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_microsmg`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_autoshotgun`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_pistol`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_pistol_mk2`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_combatpistol`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_appistol`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_pistol50`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m4`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_hk416`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_ar15`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_scarh`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_de`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_fnx45`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_glock17`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_mossberg`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_remington`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_ak47`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m70`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_uzi`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_mp9`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_mac10`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m9`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m1911`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m110`] = {
+        ["timeOut"] = 10000
+    },
+}
+```
+## Replace the next code in ``qb-ambulancejob/config.lua``
+
+```lua
+    --[[ HIGH CALIBER ]]
+    [`WEAPON_DE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M4`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HK416`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AR15`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AK47`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M70`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_SCARH`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_MK14`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M110`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HUNTINGRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    --[[ MEDIUM CALIBER ]]
+    [`WEAPON_UZI`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MAC10`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MP9`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    --[[ SMALL CALIBER ]]
+    [`WEAPON_GLOCK17`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M9`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M1911`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_FNX45`] = Config.WeaponClasses['SMALL_CALIBER'],
+    --[[ SHOTGUN ]]
+    [`WEAPON_REMINGTON`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_MOSSBERG`] = Config.WeaponClasses['SHOTGUN'],
+    --[[ CUTTING ]]
+    [`WEAPON_SHIV`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_KATANA`] = Config.WeaponClasses['CUTTING'],
+    --[[ HEAVY IMPACT ]]
+    [`WEAPON_SLEDGEHAMMER`] = Config.WeaponClasses['HEAVY_IMPACT'],
+```
+
+## Add the next code to your `BackItems.lua` [devyn-backitems](https://github.com/devin-monro/devyn-backitems) script (OPTIONAL)
+
+```lua
+    ["weapon_ak47"] = {
+        model="w_ar_ak47",
+        back_bone = 24818,
+        x = -0.0,
+        y = -0.17,
+        z = 0.08,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_m70"] = {
+        model="w_ar_m70",
+        back_bone = 24818,
+        x = -0.0,
+        y = -0.17,
+        z = 0.08,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_remington"] = {
+        model="w_sg_remington",
+        back_bone = 24818,
+        x = -0.0,
+        y = -0.17,
+        z = 0.08,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_m110"] = {
+        model="w_sr_m110",
+        back_bone = 24818,
+        x = 0.0,
+        y = -0.17,
+        z = -0.12,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_huntingrifle"] = {
+        model="w_sr_huntingrifle",
+        back_bone = 24818,
+        x = 0.0,
+        y = -0.17,
+        z = -0.12,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_uzi"] = {
+        model="w_sb_uzi",
+        back_bone = 24818,
+        x =  0.12,
+        y = -0.17,
+        z = -0.0,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 0.0,
+    },
+    ["weapon_mp9"] = {
+        model="w_sb_mp9",
+        back_bone = 24818,
+        x =  0.12,
+        y = -0.17,
+        z = -0.0,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 0.0,
+    },
+    ["weapon_mk14"] = {
+        model="w_sr_mk14",
+        back_bone = 24818,
+        x = 0.0,
+        y = -0.17,
+        z = -0.12,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_mossberg"] = {
+        model="w_sg_mossberg",
+        back_bone = 24818,
+        x =  0.12,
+        y = -0.17,
+        z = -0.0,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 0.0,
+    },
+    ["weapon_m4"] = {
+        model="w_ar_m4",
+        back_bone = 24818,
+        x = -0.0,
+        y = -0.17,
+        z = 0.08,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_hk416"] = {
+        model="w_ar_hk416",
+        back_bone = 24818,
+        x = -0.0,
+        y = -0.17,
+        z = 0.08,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_scarh"] = {
+        model="w_ar_scarh",
+        back_bone = 24818,
+        x =  0.12,
+        y = -0.17,
+        z = -0.0,
+        x_rotation = 0.0,
+        y_rotation = 180.0,
+        z_rotation = 0.0,
+    },
+    ["weapon_mac10"] = {
+        model="w_sb_mac10",
+        back_bone = 24818,
+        x = 0.0,
+        y = -0.17,
+        z = -0.12,
+        x_rotation = 0.0,
+        y_rotation = -180.0,
+        z_rotation = 180.0,
+    },
+    ["weapon_katana"] = {
+	model="w_me_katana",
+	back_bone = 24818,
+	x = -0.2,
+	y = -0.15,
+	z = 0.12,
+	x_rotation = 0.0,
+	y_rotation = -120.0,
+	z_rotation = 180.0,
+    },
+```
+
+## Add this next line of code to your weaponsTable in `ps-dispatch/client/cl_events.lua`
+
+```lua
+-- Custom weapons
+    [GetHashKey("weapon_ak47")] = "CLASS 3: AK-47",
+    [GetHashKey("weapon_de")] = "CLASS 2: Desert Eagle",
+    [GetHashKey("weapon_fnx45")] = "CLASS 1: FN .45",
+    [GetHashKey("weapon_glock17")] = "CLASS 1: Glock 17",
+    [GetHashKey("weapon_m4")] = "CLASS 3: M4",
+    [GetHashKey("weapon_hk416")] = "CLASS 3: HK-416",
+    [GetHashKey("weapon_mk14")] = "CLASS 4: MK 14",
+    [GetHashKey("weapon_mk14")] = "CLASS 4: M110",
+    [GetHashKey("weapon_huntingrifle")] = "CLASS 3: Hunting Rifle",
+    [GetHashKey("weapon_ar15")] = "CLASS 3: AR-15",
+    [GetHashKey("weapon_m9")] = "CLASS 1: M9",
+    [GetHashKey("weapon_m70")] = "CLASS 3: m70",
+    [GetHashKey("weapon_m1911")] = "CLASS 1: 1911",
+    [GetHashKey("weapon_mac10")] = "CLASS 2: Mac-10",
+    [GetHashKey("weapon_uzi")] = "CLASS 2: Uzi",
+    [GetHashKey("weapon_mp9")] = "CLASS 2: MP9",
+    [GetHashKey("weapon_mossberg")] = "CLASS 2: Mossberg",
+    [GetHashKey("weapon_remington")] = "CLASS 2: Remington",
+    [GetHashKey("weapon_scarh")] = "CLASS 3: Scar-H"
+```
+
+## (OPTIONAL) Add the weapons to your police armory ``qb-policejob/config.lua``
+
+```lua
+Config.Items = {
+    label = "Police Armory",
+    slots = 30,
+    items = {
+        [1] = {
+            name = "weapon_glock17",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_PI_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 11,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [2] = {
+            name = "weapon_m4",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 19,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [3] = {
+            name = "weapon_ar15",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                    {component = "COMPONENT_AT_SCOPE_MEDIUM", label = "Scope"},
+                    {component = "COMPONENT_AT_AR_AFGRIP", label = "AF-Grip"},
+                }
+            },
+            type = "weapon",
+            slot = 20,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [4] = {
+            name = "weapon_remington",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_SG_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 21,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [5] = {
+            name = "weapon_scarh",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 24,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [6] = {
+            name = "weapon_mk14",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_SCOPE_LARGE", label = "Scope"},
+                }
+            },
+            type = "weapon",
+            slot = 25,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+    }
+}
+```
+

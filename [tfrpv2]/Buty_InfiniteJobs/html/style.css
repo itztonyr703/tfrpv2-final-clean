@@ -1,0 +1,887 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#body{
+    /* display:none; */
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #666666;
+}
+
+*::-webkit-scrollbar {
+    width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #666666;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #9B37FF;
+    border-radius: 10px;
+    border: 1px solid #9B37FF;
+}
+
+*{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+}
+.jobimage{
+    box-sizing: border-box;
+    position: absolute;
+    width: 49vw;
+    height: 63vh;
+    left: 81px;
+    top: -77px;
+    background: 
+    linear-gradient(1deg, #7837d4, #ffffff00) padding-box,
+    linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgb(155, 55, 255) 100%) border-box;
+    border-radius: 20px;
+    border: 3px solid transparent;
+}
+.imgfondo img{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    backdrop-filter: blur(40px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.title img{
+    position: absolute;
+    left: 75px;
+    top: 91px;
+}
+
+.title span{
+    position: absolute;
+    width: 334px;
+    height: 74px;
+    left: 177px;
+    top: 79px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #FFFFFF;
+}
+
+.line{
+    position: absolute;
+    width: 50px;
+    height: 0px;
+    left: 131px;
+    top: 116px;
+    border: 2px solid #9B37FF;
+    transform: rotate(90deg);
+}
+
+.line2{
+    position: absolute;
+    width: 572px;
+    height: 0px;
+    left: 81px;
+    top: 172px;
+    
+    border: 2px solid #9B37FF;
+}
+
+.fondo{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(89.94deg, rgba(0, 0, 0, 0.77) 22.73%, rgba(81, 0, 163, 0.68) 48.21%, rgba(14, 14, 14, 0.79) 83.61%);
+    mix-blend-mode: normal;
+}
+
+.header{
+    position: absolute;
+    left: 66px;
+    top: 272px;
+    width: 33vw;
+    height: 66vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* background: black; */
+}
+
+.newjob{
+    box-sizing: border-box;
+    position: relative;
+    width: 572px;
+    height: 155px;
+    left: 13px;
+    top: -27px;
+    background: linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgba(128, 0, 255, 0.31) 100%);
+    border: 2px solid #9B37FF;
+    border-radius: 20px;
+    margin-top: 30px;
+    transition: all 0.4s ease 0s;
+}
+.newjob:hover{
+    transition: transform .2s ease;
+    transform: scale(1.01);
+    cursor: pointer;
+    filter: drop-shadow(0px 20px 10px #0008);
+}
+
+.newjob img{
+    position: relative;
+    left: 30px;
+    top: 28px;
+}
+
+.newjob span{
+    position: absolute;
+    width: 334px;
+    height: 74px;
+    left: 187px;
+    top: 37px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #FFFFFF;
+}
+
+.linejob{
+    position: absolute;
+    width: 84px;
+    height: 0px;
+    left: 114px;
+    top: 72px;
+    border: 2px solid #9B37FF;
+    transform: rotate(90deg);
+}
+
+.infojob{
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 57vw;
+    height: 73.8vh;
+    left: 762px;
+    top: 282px;
+    background: linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgba(128, 0, 255, 0.54) 100%);
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-image: linear-gradient(1deg, #7837d4, #ffffff00) 2; 
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.infojob img{
+    position: absolute;
+    left: -51px;
+    top: -224px;
+}
+
+.fondoimg{
+    box-sizing: border-box;
+    position: absolute;
+    width: 46.6vw;
+    height: 63.5vh;
+    left: 0px;
+    top: -4px;
+    background: linear-gradient(180deg, rgba(61, 0, 121, 0) 22.69%, rgba(24, 0, 48, 0.95) 78.42%);
+    border-radius: 31px;
+}
+
+#jobimage2 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 46.8vw;
+    height: 63.5vh;
+    left: 103px;
+    top: -104px;
+    background-image: url(./img/3.png);
+    mix-blend-mode: normal;
+    border: 2px solid #9B37FF;
+    border-radius: 31px;
+}
+
+
+.jobimage2 span{
+    position: absolute;
+    width: 827px;
+    height: 98px;
+    left: 40px;
+    top: 549px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.jobtext{
+    box-sizing: border-box;
+    position: absolute;
+    width: 20.5vw;
+    height: 7.5vh;
+    left: 485px;
+    top: 16px;
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.68) 0%, rgba(29, 29, 29, 0.5) 100%);
+    border: 2px solid #8B8B8B;
+    border-radius: 15px;
+}
+
+.jobtext span{
+    position: absolute;
+    width: 334px;
+    height: 74px;
+    left: 27px;
+    top: 0px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.exp{
+    position: absolute;
+    width: 0%;
+    height: 16px;
+    left: 0px;
+    top: -1px;
+    background: linear-gradient(180deg, #8000FF 20.61%, rgba(128, 0, 255, 0.32) 100%);
+    border-radius: 12px;
+    transition: all 1s ease .2s;
+}
+
+.exp2{
+    position: absolute;
+    width: 567px;
+    height: 16px;
+    left: 155px;
+    top: 708px;
+    background: linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgba(128, 0, 255, 0.31) 100%);
+    border-radius: 12px;
+    border: 2px solid #9B37FF;
+}
+
+.exp2 span{
+    position: absolute;
+    width: 83px;
+    height: 36px;
+    left: -10px;
+    top: -50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+    color: #FFFFFF;
+}
+
+.exp span{
+    position: relative;
+    width: 653px;
+    height: 110px;
+    left: 469px;
+    top: -35px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 508;
+    font-size: 11px;
+    line-height: 42px;
+    display: inline;
+    align-items: center;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+#level{
+    position: absolute;
+    width: 62px;
+    height: 114px;
+    left: -75px;
+    top: -92px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 150px;
+    color: #FFFFFF; 
+}
+
+.select{
+    box-sizing: border-box;
+    position: absolute;
+    width: 237px;
+    height: 80px;
+    left: 784px;
+    top: 646px;
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.16) 0%, rgba(29, 29, 29, 0.5) 100%);
+    border: 2px solid #9B37FF;
+    border-radius: 15px;
+    transition: all 0.4s ease 0s;
+}
+
+.select:hover{
+    transition: transform .2s ease;
+    transform: scale(1.01);
+    cursor: pointer;
+    filter: drop-shadow(0px 20px 10px #0008);
+}
+
+.select span{
+    position: absolute;
+    width: 178px;
+    height: 74px;
+    left: 31px;
+    top: 2px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #FFFFFF;
+}
+
+.close{
+    box-sizing: border-box;
+    position: absolute;
+    width: 69px;
+    height: 60px;
+    left: 1804px;
+    top: 41px;
+    
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.16) 0%, rgba(29, 29, 29, 0.5) 100%);
+    border: 2px solid #5B565F;
+    border-radius: 15px;
+    transition: all 0.4s ease 0s;
+}
+
+.close:hover{
+    transition: transform .2s ease;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.close span{
+    position: absolute;
+    width: 178px;
+    height: 74px;
+    left: 17px;
+    top: -7px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #FFFFFF;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+              transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(110);
+              transform: translateY(111);
+      opacity: 1;
+    }
+}
+
+@media screen and (max-width:3440px){
+    .infojob{
+        left: 1087px;
+        top: 377px;
+    }
+    .close{
+        left: 3321px;
+    }
+    #selectjobs{
+        position: absolute;
+        left: 52px;
+        top: -39px;
+    }
+
+    #selectexps {
+        position: absolute;
+        left: 426px;
+        top: 247px;
+    }
+
+    .jobimage2 span {
+        width: 1393px;
+        height: 98px;
+        left: 149px;
+        top: 746px;
+        font-size: 29px;
+    }
+
+    .header {
+        position: absolute;
+        left: 66px;
+        top: 272px;
+        width: 19vw;
+    }
+
+    .jobtext {
+        left: 870px;
+    }
+    .jobtext span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: 161px;
+        top: 12px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 57px;
+        line-height: 75px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .infojob img {
+        position: absolute;
+        left: 101px;
+        top: -103px;
+        height: 63vh;
+        width: 46.8vw;
+    }
+    #test {
+        position: absolute;
+        left: -201px;
+        top: -476px;
+        height: 34vh;
+        width: 19.8vw;
+    }
+    #test {
+        position: absolute;
+        left: -421px;
+        top: -485px;
+        height: 34vh;
+        width: 15.8vw;
+    }
+    .jobimage{
+        box-sizing: border-box;
+        position: absolute;
+        width: 48vw;
+        height: 63vh;
+        left: 81px;
+        top: -77px;
+        background: 
+        linear-gradient(1deg, #7837d4, #ffffff00) padding-box,
+        linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgb(155, 55, 255) 100%) border-box;
+        border-radius: 20px;
+        border: 3px solid transparent;
+    }
+}
+
+@media screen and (max-width:2560px){
+    .infojob {
+        left: 895px;
+        top: 377px;
+    }
+    .close {
+        left: 2451px;
+    }
+    #selectjobs {
+        position: absolute;
+        left: 25px;
+        top: -39px;
+    }
+    #selectexps {
+        position: absolute;
+        left: 190px;
+        top: 234px;
+    }
+    .jobimage2 span {
+        width: 1045px;
+        height: 98px;
+        left: 85px;
+        top: 746px;
+        font-size: 20px;
+    }
+    .jobimage {
+        box-sizing: border-box;
+        position: absolute;
+        width: 48.4vw;
+        height: 63vh;
+        left: 81px;
+        top: -77px;
+        background: linear-gradient(1deg, #7837d4, #ffffff00) padding-box, linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgb(155, 55, 255) 100%) border-box;
+        border-radius: 20px;
+        border: 3px solid transparent;
+    }
+    .header {
+        position: absolute;
+        left: 66px;
+        top: 272px;
+        width: 27vw;
+    }
+    .jobtext {
+        left: 640px;
+    }
+    .jobtext span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: 92px;
+        top: 12px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 52px;
+        line-height: 75px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .infojob img {
+        position: absolute;
+        left: 101px;
+        top: -103px;
+        height: 63vh;
+        width: 46.8vw;
+    }
+    #test {
+        position: absolute;
+        left: -201px;
+        top: -476px;
+        height: 34vh;
+        width: 19.8vw;
+    }
+}
+
+@media screen and (max-width:1920px){
+    .header {
+        position: absolute;
+        left: 66px;
+        top: 272px;
+        width: 33vw;
+    }
+    .close {
+        left: 1797px;
+    }
+    .infojob {
+        /* display: none; */
+        box-sizing: border-box;
+        position: absolute;
+        width: 57vw;
+        height: 73.8vh;
+        left: 762px;
+        top: 282px;
+        background: linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgba(128, 0, 255, 0.54) 100%);
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-image: linear-gradient(1deg, #7837d4, #ffffff00) 2;
+        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    #selectjobs {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .jobtext {
+        box-sizing: border-box;
+        position: absolute;
+        width: 20.5vw;
+        height: 7.5vh;
+        left: 485px;
+        top: 16px;
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0.68) 0%, rgba(29, 29, 29, 0.5) 100%);
+        border: 2px solid #8B8B8B;
+        border-radius: 15px;
+    }
+    .jobimage{
+        box-sizing: border-box;
+        position: absolute;
+        width: 49vw;
+        height: 63vh;
+        left: 81px;
+        top: -77px;
+        background: 
+        linear-gradient(1deg, #7837d4, #ffffff00) padding-box,
+        linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgb(155, 55, 255) 100%) border-box;
+        border-radius: 20px;
+        border: 3px solid transparent;
+    }
+
+    .jobtext span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: 27px;
+        top: 0px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 75px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    .jobimage2 span {
+        position: absolute;
+        width: 827px;
+        height: 98px;
+        left: 40px;
+        top: 549px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+    }
+    .jobtext span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: 27px;
+        top: 0px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 75px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    #selectexps {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    #test {
+        position: absolute;
+        left: -14px;
+        top: -188px;
+        height: 34vh;
+        width: 19.8vw;
+    }
+      
+}
+
+@media screen and (max-width:1280px){
+    .line2 {
+        position: absolute;
+        width: 297px;
+        height: 0px;
+        left: 81px;
+        top: 172px;
+        border: 2px solid #9B37FF;
+    }
+    .header {
+        position: absolute;
+        left: 66px;
+        top: 241px;
+        width: 27vw;
+        height: 54vh;
+    }
+    .newjob {
+        box-sizing: border-box;
+        position: relative;
+        width: 308px;
+        height: 103px;
+    }
+    .newjob img {
+        position: relative;
+        left: 16px;
+        top: 20px;
+        height: 60px;
+        width: 59px;
+    }
+    .linejob {
+        position: absolute;
+        width: 59px;
+        height: 0px;
+        left: 64px;
+        top: 47px;
+        border: 2px solid #9B37FF;
+        transform: rotate(90deg);
+    }
+
+    .newjob span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: 117px;
+        top: 12px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 75px;
+        color: #FFFFFF;
+    }
+    .infojob {
+        display: none;
+        box-sizing: border-box;
+        position: absolute;
+        width: 57vw;
+        height: 73.8vh;
+        left: 469px;
+        top: 187px;
+        background: linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgba(128, 0, 255, 0.54) 100%);
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-image: linear-gradient(1deg, #7837d4, #ffffff00) 2;
+        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    #selectjobs {
+        position: absolute;
+        left: -38px;
+        top: 29px;
+    }
+    .jobtext {
+        box-sizing: border-box;
+        position: absolute;
+        width: 20.5vw;
+        height: 7.5vh;
+        left: 322px;
+        top: 16px;
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0.68) 0%, rgba(29, 29, 29, 0.5) 100%);
+        border: 2px solid #8B8B8B;
+        border-radius: 15px;
+    }
+    .jobtext span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: -36px;
+        top: -13px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 75px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .jobimage {
+        box-sizing: border-box;
+        position: absolute;
+        width: 50vw;
+        height: 63vh;
+        left: 81px;
+        top: -77px;
+        background: linear-gradient(1deg, #7837d4, #ffffff00) padding-box, linear-gradient(180deg, rgba(128, 0, 255, 0) 20.61%, rgb(155, 55, 255) 100%) border-box;
+        border-radius: 20px;
+        border: 3px solid transparent;
+    }
+    .jobimage2 span {
+        position: absolute;
+        width: 481px;
+        height: 78px;
+        left: 61px;
+        top: 349px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 21px;
+        color: #FFFFFF;
+    }
+
+    #selectexps {
+        position: absolute;
+        left: -64px;
+        top: -223px;
+    }
+    #test {
+        position: absolute;
+        left: 54px;
+        top: 81px;
+        height: 34vh;
+        width: 19.8vw;
+    }
+    #jobimage2 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 46.8vw;
+        height: 63.5vh;
+        left: 103px;
+        top: -104px;
+        background-image: url(./img/3.png);
+        mix-blend-mode: normal;
+        border: 2px solid #9B37FF;
+        border-radius: 29px;
+    }
+    .exp2 {
+        width: 309px;
+        height: 16px;
+    }
+
+    .select {
+        box-sizing: border-box;
+        position: absolute;
+        width: 237px;
+        height: 80px;
+        left: 504px;
+        top: 648px;
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0.16) 0%, rgba(29, 29, 29, 0.5) 100%);
+        border: 2px solid #9B37FF;
+        border-radius: 15px;
+        transition: all 0.4s ease 0s;
+    }
+    .jobtext span {
+        position: absolute;
+        width: 334px;
+        height: 74px;
+        left: -36px;
+        top: -13px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 75px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    .exp span {
+        position: relative;
+        width: 653px;
+        height: 110px;
+        left: 205px;
+        top: -35px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 508;
+        font-size: 11px;
+        line-height: 42px;
+        display: inline;
+        align-items: center;
+        text-align: left;
+        color: #FFFFFF;
+    }
+    .infojob img {
+        position: absolute;
+        left: 105px;
+        top: -102px;
+        height: 62vh;
+        width: 46.5vw;
+    }
+}

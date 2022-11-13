@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Loading</title>
+		<link rel="icon" href="/logo.png">
+		<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+		
+		<link href="assets/style.css" rel="stylesheet" type="text/css"/>
+		<script src="assets/script.js" type="text/javascript"></script>
+    </head>
+    <body onload="BG.load()">
+		
+		<iframe id="video_background" class="video-background video-background-hide" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
+		<div class="video-overlay"></div>
+		
+		<svg id="cursor" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+			<polygon style="fill:#b6b6b6;" points="284.197,328.561 346.079,469.645 297.825,490.812 249.521,512 187.628,370.917 82.26,471.745 82.49,0 429.74,319.313"/>
+			<polygon style="fill:#717171;" points="284.197,328.561 346.079,469.645 297.825,490.812 82.49,0 429.74,319.313"/>
+		</svg>
+		
+		<div class="warp-logo smoothly" id="warpLogo">
+			<div class="main-logo smoothly" id="mainLogo">
+				<img class="server-logo smoothly" id="serverLogo" src="assets/logo.png"/>
+				<div class="server-name smoothly" id="serverName">Bloodline RP</div>
+			</div>
+		</div>
+		<div class="content-bg smoothly" id="warpContent">
+			<div class="main-menu">
+				<div class="main-menu-item main-menu-item-active" id="homeMenu" onclick="BG.onClickItemMenu('home')">Home</div>
+				<div class="main-menu-item" id="contactsMenu" onclick="BG.onClickItemMenu('contacts')">STAFF</div>
+			</div>
+			<div class="content" id="content">
+				<div class="warp-content custom-slider" id="rules" style="display: none;"></div>
+				<div class="warp-content custom-slider" id="news" style="display: none;"></div>
+				<div class="warp-content custom-slider" id="contacts" style="display: none;"></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="music-warp-container" id="musicContainer"></div>
+			<div class="loadbar">
+				<div id="progressBar"></div>
+			</div>
+		</div>
+		<canvas class="mouse-bubbles"></canvas>
+    </body>
+</html>

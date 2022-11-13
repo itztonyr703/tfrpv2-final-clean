@@ -1,0 +1,25 @@
+For sigle play
+
+paste this text into "favouriteanims.xml"
+
+<Anim dict="cuddlepartner1@pawuk" name="cuddlepartner1_clip" />
+
+<Anim dict="cuddlepartner2@pawuk" name="cuddlepartner2_clip" />
+
+For fivem
+
+   ["Cuddle1"] = {"cuddlepartner1@pawuk", "cuddlepartner1_clip", "Cuddle1", AnimationOptions =
+   {
+	   EmoteLoop = true,
+       EmoteMoving = false,
+   }},
+   ["Cuddle2"] = {"cuddlepartner2@pawuk", "cuddlepartner2_clip", "Cuddle2", AnimationOptions =
+   {
+	   EmoteLoop = true,
+       EmoteMoving = false,
+   }},
+ ☽ PAWUK`MODS ☾
+𝐘𝐨𝐮 𝐜𝐚𝐧 𝐟𝐨𝐥𝐥𝐨𝐰 𝐮𝐬 𝐭𝐡𝐞𝐫𝐞.
+𝐆𝐓𝐀 𝐕 𝐌𝐨𝐝𝐬 :https://www.gta5-mods.com/users/pawureliomods
+𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦: https://www.instagram.com/__pawuk 
+𝐃𝐢𝐬𝐜𝐨𝐫𝐝 𝐢𝐧𝐯𝐢𝐭𝐞 𝐥𝐢𝐧𝐤: https://discord.gg/cbkuhcG4cV 

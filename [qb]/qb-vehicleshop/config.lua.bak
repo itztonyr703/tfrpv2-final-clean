@@ -1,0 +1,124 @@
+Config = {}
+
+Config.PlateLetters  = 4
+Config.PlateNumbers  = 4
+Config.PlateUseSpace = false
+
+Config.SpawnVehicle = true  -- TRUE if you want spawn vehicle when buy
+
+Config.TestDrive = true     -- TRUE if you want enable test drive
+Config.TestDriveTime = 30   -- TIME in SEC
+
+Config.Blips = {
+    [1] = {
+        blip = vector3(-56.49, -1096.58, 26.42),
+        blipname = 'Premium Deluxe Motorsport',
+        blipsprite = 326,
+        blipcolor = 3
+    },
+    [2] = {
+        blip = vector3(-784.7443, -2665.9954, 21.1888),
+        blipname = 'Aircraft Dealership',
+        blipsprite = 90,
+        blipcolor = 3
+    },
+    [3] = {
+        blip = vector3(-773.7, -1495.2, 2.6),
+        blipname = 'Boat Shop',
+        blipsprite = 427,
+        blipcolor = 3
+    }
+}
+
+Config.Shops = {
+    [1] = {
+        category = 'pdm', -- Change ["shop"] in qb-core/shared.lua to match this for the vehicles you want
+        coords = vector3(-56.49, -1096.58, 26.42), -- For Marker
+        spawnvehicle = vector4(978.19, -3001.99, -40.62, 89.5), -- Display Point
+        cameracoords = vector3(974.1, -2997.94, -39.00), -- Where To Create Camera
+        pointcamera = vector3(979.1, -3003.00, -40.50), -- Where To Point Camera
+        buyspawn = vector4(-46.3204, -1077.1256, 26.7241, 72.1121), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(-46.3204, -1077.1256, 26.7241, 72.1121) -- Where Vehicle Spawns on Test Drive
+    },
+    [2] = {
+        category = 'police',
+        coords = vector3(435.8071, -975.3903, 25.7000),
+        spawnvehicle = vector4(198.5969, -999.3381, -99.0000, 132.5236), -- Display Point
+        cameracoords = vector3(198.7576, -1007.2697, -99.0000), -- Where To Create Camera
+        pointcamera = vector3(198.7576, -1007.2697, -99.0000), -- Where To Point Camera
+        buyspawn = vector4(430.8606, -978.3705, 25.7000, 177.7243), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(430.8606, -978.3705, 25.7000, 177.7243) -- Where Vehicle Spawns on Test Drive
+    },
+    [3] = {
+        category = 'ambulance',
+        coords = vector3(0, 0, 0), -- Marker Point
+        spawnvehicle = vector4(0, 0, 0, 0), -- Display Point
+        cameracoords = vector3(0, 0, 0), -- Where To Create Camera
+        pointcamera = vector3(0, 0, 0), -- Where To Point Camera
+        buyspawn = vector4(0, 0, 0, 0), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(0, 0, 0, 0) -- Where Vehicle Spawns on Test Drive
+    },
+    [4] = {
+        category = 'mechanic',
+        coords = vector3(0, 0, 0), -- Marker Point
+        spawnvehicle = vector4(0, 0, 0, 0), -- Display Point
+        cameracoords = vector3(0, 0, 0), -- Where To Create Camera
+        pointcamera = vector3(0, 0, 0), -- Where To Point Camera
+        buyspawn = vector4(0, 0, 0, 0), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(0, 0, 0, 0) -- Where Vehicle Spawns on Test Drive
+    },
+    [5] = {
+        category = 'motorcycle',
+        coords = vector3(0, 0, 0), -- Marker Point
+        spawnvehicle = vector4(0, 0, 0, 0), -- Display Point
+        cameracoords = vector3(0, 0, 0), -- Where To Create Camera
+        pointcamera = vector3(0, 0, 0), -- Where To Point Camera
+        buyspawn = vector4(0, 0, 0, 0), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(0, 0, 0, 0) -- Where Vehicle Spawns on Test Drive
+    },
+    [6] = {
+        category = 'offroad',
+        coords = vector3(0, 0, 0), -- Marker Point
+        spawnvehicle = vector4(0, 0, 0, 0), -- Display Point
+        cameracoords = vector3(0, 0, 0), -- Where To Create Camera
+        pointcamera = vector3(0, 0, 0), -- Where To Point Camera
+        buyspawn = vector4(0, 0, 0, 0), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(0, 0, 0, 0) -- Where Vehicle Spawns on Test Drive
+    },
+    [7] = {
+        category = 'boat',
+        coords = vector3(-773.7, -1495.2, 2.6), -- Marker Point
+        spawnvehicle = vector4(-801.36, -1504.19, -0.09, 290.76), -- Display Point
+        cameracoords = vector3(-789.71, -1501.12, 4.59), -- Where To Create Camera
+        pointcamera = vector3(-801.36, -1504.19, -0.09), -- Where To Point Camera
+        buyspawn = vector4(-801.36, -1504.19, -0.09, 290.76), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(-801.36, -1504.19, -0.09, 290.76) -- Where Vehicle Spawns on Test Drive
+    },
+    [8] = {
+        category = 'tunershop',
+        coords = vector3(124.7896, -3014.1069, 7.0409), -- Marker Point
+        spawnvehicle = vector4(1295.2424, 245.6068, -49.0574, 353.9325), -- Display Point
+        cameracoords = vector3(1285.5613, 245.7454, -49.0574), -- Where To Create Camera
+        pointcamera = vector3(1285.5613, 245.7454, -49.0574), -- Where To Point Camera
+        buyspawn = vector4(126.4259, -3022.8943, 7.0409, 268.8135), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(126.4259, -3022.8943, 7.0409, 268.8135) -- Where Vehicle Spawns on Test Drive
+    },
+    [9] = {
+        category = 'personal',
+        coords = vector3(-1258.9968, -368.3989, 36.9075),
+        spawnvehicle = vector4(198.5969, -999.3381, -99.0000, 132.5236), -- Display Point
+        cameracoords = vector3(198.7576, -1007.2697, -99.0000), -- Where To Create Camera
+        pointcamera = vector3(198.7576, -1007.2697, -99.0000), -- Where To Point Camera
+        buyspawn = vector4(-1233.6914, -350.7941, 37.3328, 25.0520), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(-1233.6914, -350.7941, 37.3328, 25.0520) -- Where Vehicle Spawns on Test Drive
+    },
+    [10] = {
+        category = 'airplane',
+        coords = vector3(-784.8171, -2666.1074, 21.1888), -- Marker Point
+        spawnvehicle = vector4(-1999.2108, 3216.3518, 32.8103, 40.8558), -- Display Point
+        cameracoords = vector3(-2000.6483, 3194.2473, 32.8102), -- Where To Create Camera
+        pointcamera = vector3(-2000.6483, 3194.2473, 32.8102), -- Where To Point Camera
+        buyspawn = vector4(-1658.4054, -2957.4768, 13.9447, 236.4929), -- Where Vehicle Spawns on Buy
+        testdrive = vector4(-1658.4054, -2957.4768, 13.9447, 236.4929) -- Where Vehicle Spawns on Test Drive
+    }
+}
